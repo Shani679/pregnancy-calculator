@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 24px;
+  animation: slideDown 0.5s ease-out;
+}
+
+.app-header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.app-header .subtitle {
+  font-size: 0.85rem;
+  opacity: 0.95;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lmp-section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-out 0.1s both;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  animation: slideUp 0.5s ease-out 0.2s both;
+}
+
+.calendar-section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.info-section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.manual-input-section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-out 0.3s both;
+}
+
+.app-footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 8px;
+  }
+
+  .app-header {
+    margin-bottom: 18px;
+  }
+
+  .app-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .container {
+    gap: 14px;
+  }
+
+  .lmp-section,
+  .calendar-section,
+  .info-section,
+  .manual-input-section {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .content-grid {
+    gap: 14px;
+  }
+}
+
